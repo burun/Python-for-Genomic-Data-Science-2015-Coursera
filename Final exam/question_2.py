@@ -5,21 +5,25 @@ What are the lengths of the sequences in the file? What is the longest sequence 
 f = open("dna1.fasta", "r")
 file = f.readlines()
 
-seq_lengths = []
-length = 0
+sequences = []
+seq = ""
 for f in file:
     if not f.startswith('>'):
-        length = length + len(f.replace(" ", ""))
+        f = f.replace(" ", "")
+        f = f.replace("\n", "")
+        seq = seq + f
     else:
-        seq_lengths.append(length)
-        length=0
+        sequences.append(seq)
+        seq = ""
 
 # Add the last seq
-seq_lengths.append(length)
+sequences.append(seq)
 
-seq_lengths = seq_lengths[1:]
+sequences = sequences[1:]
 
-print(seq_lengths, max(seq_lengths), min(seq_lengths))
+lengths = [len(i) for i in sequences]
+
+print(max(lengths), min(lengths))
 
 
 
