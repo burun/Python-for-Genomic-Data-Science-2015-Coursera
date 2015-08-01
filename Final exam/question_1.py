@@ -2,6 +2,6 @@
 How many records are in the file?
 """
 
-f = open("dna.example.fasta", "r")
-all = f.read()
-print(all.count('>'))
+f = open("dna1.fasta", "r")
+file = f.read()
+print(file.count('>'))
