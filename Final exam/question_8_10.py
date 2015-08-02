@@ -25,7 +25,7 @@ def get_all_repeats(sequence):
     length = len(sequence)
     repeats = []
     for i in range(length):
-        repeats.append(sequence[i:i + 6])
+        repeats.append(sequence[i:i + 7])
     return repeats
 
 all_six_repearts = []
